@@ -3,8 +3,9 @@ import React from 'react'
 import SearchBar from '../components/SearchBar'
 import TodayWeather from '../components/TodayWeather'
 import WeatherForecast from '../components/weatherForecast'
-import ToggleButton from '../components/ToggleButton/ToggleButton'
-import ColorPicker from '../components/ColorPicker/ColorPicker'
+import TodoList from '../components/TodoList/TodoList'
+import ColorPicker from '../components/ColorPicker'
+import ToggleButton from '../components/ToggleButton'
 
 
 const index = () => {
@@ -13,7 +14,10 @@ const index = () => {
             {/* <SearchBar /> */}
             {/* <TodayWeather /> */}
             {/* <WeatherForecast /> */}
-            <ColorPicker />
+            {/* <ToggleButton /> */}
+            {/* <ColorPicker /> */}
+
+            <TodoList />
         </View>
     )
 }
