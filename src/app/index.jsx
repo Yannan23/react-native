@@ -4,14 +4,16 @@ import SearchBar from '../components/SearchBar'
 import TodayWeather from '../components/TodayWeather'
 import WeatherForecast from '../components/weatherForecast'
 import ToggleButton from '../components/ToggleButton/ToggleButton'
+import ColorPicker from '../components/ColorPicker/ColorPicker'
 
 
 const index = () => {
     return (
         <View>
             {/* <SearchBar /> */}
-            <TodayWeather />
+            {/* <TodayWeather /> */}
             {/* <WeatherForecast /> */}
+            <ColorPicker />
         </View>
     )
 }
