@@ -2,23 +2,22 @@ import { View, Text, TextInput, Button, FlatList, TouchableOpacity } from 'react
 import React, { useState } from 'react'
 
 const TodoList = () => {
-    const [todo, setTodo] = useState([])
+
+    const [todos, setTodos] = useState([])
     const [text, setText] = useState('')
 
     const addTodo = () => {
         if (text.trim()) {
-            setTodo([...todo, { id: Date.now().toString(), text }])
+            setTodos([...todos, { id: Date.now().toString(), text }])
             setText('')
-            console.log(text);
         }
     }
 
     const removeTodo = (id) => {
-        setTodo(todo.filter(todo => todo.id != id))
+        setTodos(todos.filter((todos) => todos.id != id))
     }
 
     const renderTodo = ({ item }) => {
-
         return (
             <TouchableOpacity onPress={() => removeTodo(item.id)}>
                 <Text>{item.text}</Text>
@@ -26,19 +25,12 @@ const TodoList = () => {
         )
     }
 
-    // const handleSubmit = () => {
-
-    // }
-
     return (
         <View>
             <Text>Todo List</Text>
             <TextInput placeholder='Add a new task' value={text} onChangeText={setText} returnKeyType='done' />
-            <Button title='Add task' onPress={addTodo} />
-            <FlatList data={todo} keyExtractor={(item) => item.id} renderItem={renderTodo}>
-
-            </FlatList>
-
+            <Button title='Add todo' onPress={addTodo} />
+            <FlatList data={todos} keyExtractor={item => item.id} renderItem={renderTodo} />
         </View>
     )
 }
