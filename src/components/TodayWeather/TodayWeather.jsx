@@ -1,26 +1,29 @@
-import { View, Text, FlatList } from 'react-native'
-import React from 'react'
+import { View, Text, FlatList, TextInput, Button } from 'react-native'
+import React, { useState } from 'react'
+
+
 
 const TodayWeather = () => {
-    const weather = [
-        {
-            weather: 'sunny',
-            temp: '17-29'
-        },
-        {
-            weather: 'cloudy'
-        }]
+    const [weather, setWeather] = useState('')
+    const [city, setCity] = useState('')
+
+    const weatherData = {
+        Sydney: 'Sunny, 19-27',
+        Beijing: 'cloudy,-1 - 10'
+    }
+
+    const getWeather = () => {
+        co
+        setWeather(weatherData[city] || 'no data')
+    }
+
     return (
         <View>
-            <FlatList data={weather} keyExtractor={(item, index) => index.toString()} renderItem={({ item }) => {
-                return (
-                    <View>
-                        <Text>weather: {item.weather}</Text>
-                        {/* <Text>cloud: {item.cloud}</Text> */}
-                    </View>
-                )
-            }
-            } />
+            <Text>Weather</Text>
+            <TextInput placeholder='Enter city' value={city} onChangeText={setCity} />
+            <Button title='Get Weather' onPress={getWeather} />
+
+            {weather ? <Text>{weather}</Text> : null}
         </View>
     )
 }
