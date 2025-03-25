@@ -6,6 +6,7 @@ import WeatherForecast from '../components/weatherForecast'
 import TodoList from '../components/TodoList/TodoList'
 import ColorPicker from '../components/ColorPicker'
 import ToggleButton from '../components/ToggleButton'
+import UseEffect from '../components/UseEffect/UseEffect'
 
 
 const index = () => {
@@ -17,7 +18,9 @@ const index = () => {
             {/* <ToggleButton /> */}
             {/* <ColorPicker /> */}
 
-            <TodoList />
+            {/* <TodoList /> */}
+
+            <UseEffect />
         </View>
     )
 }
